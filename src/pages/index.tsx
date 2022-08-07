@@ -2,6 +2,7 @@ import Layout from "../components/Layout"
 import Tabela from "../components/Tabela"
 import Botao from "../components/Botao"
 import Cliente from "../core/Cliente"
+import Formulario from "../components/Formulario"
 
 export default function Home() {
 
@@ -13,22 +14,24 @@ export default function Home() {
     new Cliente('Anna Karolina', 31, 5)
   ]
 
-  function clienteSelecionado(cliente: Cliente){
+  function clienteSelecionado(cliente: Cliente) {
     console.log(cliente.nome)
   }
 
-  function clienteExcluido(cliente: Cliente){
+  function clienteExcluido(cliente: Cliente) {
     console.log(`Excluir... ${cliente.nome}`)
   }
 
   return (
     <div className={`flex h-screen justify-center items-center bg-gradient-to-r from-purple-500 to-blue-600`}>
-     <Layout titulo="Cadastro Simples">
-       <div className="flex justify-end">
-         <Botao cor="green" className="mb-4">Novo Cliente</Botao>
-       </div>
-       <Tabela clientes={clientes} clienteSelecionado={clienteSelecionado} clienteExcluido={clienteExcluido} />
-     </Layout>
+      <Layout titulo="Cadastro Simples">
+        <div className="flex justify-end">
+          <Botao cor="green" className="mb-4">Novo Cliente</Botao>
+        </div>
+        <Tabela clientes={clientes} clienteSelecionado={clienteSelecionado} clienteExcluido={clienteExcluido} />
+        
+        <Formulario cliente={clientes[0]} />
+      </Layout>
     </div>
   )
 }
