@@ -10,8 +10,7 @@ module.exports = {
     /^to-/,
     /^from-/,
     ],
-  }
-  darkMode: false, // or 'media' or 'class'
+  },
   theme: {
     extend: {},
   },
