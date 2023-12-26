@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "firebase": "^9.23.0",
     "next": "12.2.4",
     "npm-check-updates": "^16.10.12",
